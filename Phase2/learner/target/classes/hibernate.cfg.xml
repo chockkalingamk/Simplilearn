@@ -23,9 +23,15 @@
    <property name="show_sql">true</property>
    
    <!-- JDBC connection pool settings to be used -->
-   <property name="connection.pool_size">1</property>
+   <property name="connection.pool_size">5</property>
    
-  <!--  <mapping class="com.project.bean.Users"/> -->
+   <property name="hibernate.hbm2ddl.auto">update</property>
+   
+   <mapping class="com.project.bean.Users"/> 
+   <mapping class="com.project.bean.Classes"/> 
+   <mapping class="com.project.bean.Subjects"/> 
+   <mapping class="com.project.bean.Teachers"/> 
+   
    </session-factory>
    
    

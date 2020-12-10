@@ -21,7 +21,7 @@
 			<table style="with: 100%">
 				<tr>
 					<td>Class</td>
-					<td><input type="text" name="class" /></td>
+					<td><input type="text" name="className" /></td>
 				</tr>
 				<tr>
 					<td>Standard Name</td>

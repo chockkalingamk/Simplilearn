@@ -21,6 +21,8 @@ public class UsersDaoImpl implements UsersDao{
 			
 			userObj = (Users) session.createQuery("FROM Users U WHERE U.userName = :userName").setParameter("userName", user.getUserName())
 	                .uniqueResult();
+			
+			trans.commit();
 		}catch(Exception e)
 		{
 			e.printStackTrace();

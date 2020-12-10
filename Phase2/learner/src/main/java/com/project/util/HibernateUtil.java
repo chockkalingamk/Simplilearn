@@ -15,7 +15,7 @@ public class HibernateUtil {
 		// Get a reference to the SessionFactory
 		sessionFactory = new Configuration()
     								.configure("hibernate.cfg.xml")
-    								.addAnnotatedClass(Users.class)
+    								//.addAnnotatedClass(Users.class)
     								.buildSessionFactory();
 		
 		

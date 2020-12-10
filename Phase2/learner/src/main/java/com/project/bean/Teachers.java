@@ -1,14 +1,17 @@
 package com.project.bean;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+@Entity
 public class Teachers {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int teacherId;
+	private int tId;
+	@Column(name = "teacherId")
+	private String teacherId;
 	@Column(name = "teacherName")
 	private String teacherName;
 	@Column(name = "subjectId")
@@ -17,15 +20,15 @@ public class Teachers {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Teachers(int teacherId, String teacherName) {
+	public Teachers(String teacherId, String teacherName) {
 		super();
 		this.teacherId = teacherId;
 		this.teacherName = teacherName;
 	}
-	public int getTeacherId() {
+	public String getTeacherId() {
 		return teacherId;
 	}
-	public void setTeacherId(int teacherId) {
+	public void setTeacherId(String teacherId) {
 		this.teacherId = teacherId;
 	}
 	public String getTeacherName() {

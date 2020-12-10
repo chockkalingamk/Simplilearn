@@ -1,10 +1,16 @@
 package com.project.bean;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+@Entity
 public class Subjects {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,6 +19,80 @@ public class Subjects {
 	private String subjectCode;
 	@Column(name = "subjectName")
 	private String subjectName;
-	@Column(name = "classId")
-	private int classId;
+	@OneToMany(mappedBy="subject")
+	private Set<Classes> classObj;
+	
+	
+	
+	
+	public Subjects() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Subjects( String subjectCode, String subjectName) {
+		super();
+		this.subjectCode = subjectCode;
+		this.subjectName = subjectName;
+	}
+
+
+
+	public int getSubjectId() {
+		return subjectId;
+	}
+
+
+
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
+	}
+
+
+
+	public String getSubjectCode() {
+		return subjectCode;
+	}
+
+
+
+	public void setSubjectCode(String subjectCode) {
+		this.subjectCode = subjectCode;
+	}
+
+
+
+	public String getSubjectName() {
+		return subjectName;
+	}
+
+
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
+
+
+
+	public Set<Classes> getClassObj() {
+		return classObj;
+	}
+
+
+
+	public void setClassObj(Set<Classes> classObj) {
+		this.classObj = classObj;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Subjects [subjectId=" + subjectId + ", subjectCode=" + subjectCode + ", subjectName=" + subjectName
+				+ "]";
+	}
+	
+	
 }

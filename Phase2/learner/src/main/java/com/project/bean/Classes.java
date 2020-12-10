@@ -1,10 +1,11 @@
 package com.project.bean;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+@Entity
 public class Classes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,9 +16,8 @@ public class Classes {
 	private String standardName;
 	@Column(name = "standardSection")
 	private String standardSection;
-	
-	
-	
+
+		
 	public Classes() {
 		super();
 		// TODO Auto-generated constructor stub

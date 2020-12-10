@@ -23,7 +23,6 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
 		Users loginUser = new Users();
-		UsersDao userDao = new UsersDaoImpl();
 
 		loginUser.setUserName(request.getParameter("userName"));
 		loginUser.setPassword(request.getParameter("password"));
@@ -32,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 
 			if (userDao.checkuser(loginUser)) {
 
-				response.sendRedirect("loginSucces.jsp");
+				response.sendRedirect("loginSuccess.jsp");
 
 			} else {
 				response.sendRedirect("login.jsp");
