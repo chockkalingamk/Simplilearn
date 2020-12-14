@@ -10,7 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 @Entity
+@Table(name="subjects")
 public class Subjects {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,8 +21,10 @@ public class Subjects {
 	private String subjectCode;
 	@Column(name = "subjectName")
 	private String subjectName;
-	@OneToMany(mappedBy="subject")
-	private Set<Classes> classObj;
+	@Column(name = "created_by")
+	private String createdBy;
+	@Column(name = "created_date")
+	private String createdDate;
 	
 	
 	
@@ -73,19 +77,20 @@ public class Subjects {
 	public void setSubjectName(String subjectName) {
 		this.subjectName = subjectName;
 	}
-
-
-
-	public Set<Classes> getClassObj() {
-		return classObj;
+	
+	public String getCreatedBy() {
+		return createdBy;
 	}
-
-
-
-	public void setClassObj(Set<Classes> classObj) {
-		this.classObj = classObj;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
-
+	
+	public String getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
 
 
 	@Override

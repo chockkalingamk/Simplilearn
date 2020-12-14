@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
+@Table(name="classes")
 public class Classes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,6 +18,10 @@ public class Classes {
 	private String standardName;
 	@Column(name = "standardSection")
 	private String standardSection;
+	@Column(name = "created_by")
+	private String createdBy;
+	@Column(name = "created_date")
+	private String createdDate;
 
 		
 	public Classes() {
@@ -52,6 +58,19 @@ public class Classes {
 	}
 	public void setStandardSection(String standardSection) {
 		this.standardSection = standardSection;
+	}
+	
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+	public String getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
 	}
 	@Override
 	public String toString() {

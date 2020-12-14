@@ -1,6 +1,8 @@
 package com.project.main;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,6 +32,8 @@ public class ClassesServlet extends HttpServlet {
 		classObj.setClassName(request.getParameter("className"));
 		classObj.setStandardName(request.getParameter("standardName"));
 		classObj.setStandardSection(request.getParameter("standardSection"));
+		classObj.setCreatedBy("admin");
+		classObj.setCreatedDate(LocalDateTime.now().toString());
 		try {
 			classDao.saveClass(classObj);
 			

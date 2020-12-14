@@ -1,0 +1,25 @@
+create database project;
+
+use project;
+
+CREATE TABLE classes (classId int, className VARCHAR(50), standardName VARCHAR(100),standardSection VARCHAR(100),
+       created_by VARCHAR(50), created_date DATETIME, primary key (classId));
+	   
+CREATE TABLE subjects (subjectId int, subjectCode VARCHAR(50), subjectName VARCHAR(100),
+       created_by VARCHAR(50), created_date DATETIME, primary key (subjectId));
+
+
+CREATE TABLE teachers (tId int, teacherId varchar(25), teacherName VARCHAR(50),
+       created_by VARCHAR(50), created_date DATETIME, primary key (tId));
+
+CREATE TABLE students (sId int, classId int, studentId varchar(50), studentName VARCHAR(100),
+       created_by VARCHAR(50), created_date DATETIME, primary key (sId));
+	   
+CREATE TABLE users (id int, email varchar(50), password varchar(50), userName varchar(50), primary key (id));
+
+
+CREATE TABLE cls_sub_teh (id int,classId int, subjectId int, teacherId int,
+       created_by VARCHAR(50), created_date DATETIME, primary key (id));
+
+insert into users (id,userName,password) values(1,'admin','admin');
+

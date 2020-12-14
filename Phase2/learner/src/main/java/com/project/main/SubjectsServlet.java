@@ -1,6 +1,8 @@
 package com.project.main;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +28,8 @@ public class SubjectsServlet extends HttpServlet {
 
 		subjectObj.setSubjectCode(request.getParameter("subjectCode"));
 		subjectObj.setSubjectName(request.getParameter("subjectName"));
+		subjectObj.setCreatedBy("admin");
+		subjectObj.setCreatedDate(LocalDateTime.now().toString());
 		try {
 			subjectDao.saveSubject(subjectObj);
 			

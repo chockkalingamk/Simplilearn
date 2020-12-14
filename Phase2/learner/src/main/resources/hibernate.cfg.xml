@@ -31,6 +31,8 @@
    <mapping class="com.project.bean.Classes"/> 
    <mapping class="com.project.bean.Subjects"/> 
    <mapping class="com.project.bean.Teachers"/> 
+   <mapping class="com.project.bean.Students"/> 
+   <mapping class="com.project.bean.SubjectsClasses"/> 
    
    </session-factory>
    

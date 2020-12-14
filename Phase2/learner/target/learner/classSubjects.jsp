@@ -16,7 +16,7 @@
 </div>
 
 <div class="main">
-  <h1>Class Subject Form</h1>
+  <h1>Class Form</h1>
 		<form action="<%=request.getContextPath()%>/classSubject" method="post">
 			<table style="with: 100%">
 				<tr>

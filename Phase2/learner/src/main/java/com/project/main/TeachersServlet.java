@@ -1,6 +1,8 @@
 package com.project.main;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,6 +31,8 @@ public class TeachersServlet extends HttpServlet {
 
 		teacherObj.setTeacherId(request.getParameter("teacherId"));
 		teacherObj.setTeacherName(request.getParameter("teacherName"));
+		teacherObj.setCreatedBy("admin");
+		teacherObj.setCreatedDate(LocalDateTime.now().toString());
 		try {
 			teachersDao.saveTeachers(teacherObj);
 			

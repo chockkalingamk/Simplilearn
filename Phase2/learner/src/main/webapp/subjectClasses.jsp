@@ -28,16 +28,16 @@
 					%>
 
 
-					<td><select name="className" size="<%listObj.size();%>"
+					<td><select name="classId" size="<%listObj.size();%>"
 						multiple>
 							<option value="">--Select---</option>
 							<%
-								out.println("outside loop");
+								
 								for (Iterator i = listObj.iterator(); i.hasNext();) {
 									Classes c = (Classes) i.next();
 							%>
 							<option value="<%=c.getClassId()%>">
-								<%=c.getClassName()%>
+								<%=c.getClassName()%>||<%=c.getStandardName()%>||<%=c.getStandardSection()%>
 							</option>
 							<% } %>
 					</SELECT></td>
@@ -52,7 +52,7 @@
 					%>
 
 
-					<td><select name="subjectName" size="<%listSubjectObj.size();%>">
+					<td><select name="subjectId" size="<%listSubjectObj.size();%>">
 							<option value="">--Select---</option>
 							<%
 								for (Iterator i = listSubjectObj.iterator(); i.hasNext();) {
